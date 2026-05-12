@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Brownie",
+        "precio": 97500,
+        "imagen": "https://i.ibb.co/bgFWn591/Brownie.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Tarta Cabsha",
+        "precio": 110000,
+        "imagen": "https://i.ibb.co/r2ZJqWsb/Cabsha.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Cheesecake",
+        "precio": 120000,
+        "imagen": "https://i.ibb.co/vCzZpVp9/Cheesecake.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Tarta de Frutilla",
+        "precio": 125000,
+        "imagen": "https://i.ibb.co/gZFtF8Kk/Frutilla.jpg"
+    },
+        {
+        "id": 5,
+        "nombre": "Lemon Pie",
+        "precio": 85000,
+        "imagen": "https://i.ibb.co/NdvZ2sKj/Lemon-Pie.jpg"
+    }
+]

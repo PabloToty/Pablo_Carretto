@@ -1,0 +1,26 @@
+.contenedor {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 28px;
+    color: #5A2E1F;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.estado {
+    font-size: 18px;
+    color: #555;
+    margin-top: 40px;
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mariana Torres",
+        "email": "mariana@midominio.com",
+        "puesto": "Chef Pastelero",
+        "foto": "https://i.ibb.co/hxt9Kd9N/mujer1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Diego Fernández",
+        "email": "diego@midominio.com",
+        "puesto": "Maestro Panadero",
+        "foto": "https://i.ibb.co/XrL8H5qW/hombre.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Valentina Ríos",
+        "email": "valentina@midominio.com",
+        "puesto": "Ayudante de Pastelería",
+        "foto": "https://i.ibb.co/ch2x8NLL/mujer2.jpg"
+    }
+]
