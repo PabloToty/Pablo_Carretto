@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
 
-function Item({ nombre, precio, imagen }) {
+function Item({ id, nombre, precio, imagen }) {
+
     const [cantidad, setCantidad] = useState(0);
+
     const [esFavorito, setEsFavorito] = useState(false);
 
     const incrementar = () => {
@@ -14,6 +17,7 @@ function Item({ nombre, precio, imagen }) {
     };
 
     const comprar = () => {
+
         if (cantidad === 0) {
             alert("Seleccioná al menos 1 producto");
             return;
@@ -27,9 +31,9 @@ function Item({ nombre, precio, imagen }) {
     };
 
     return (
+
         <div className={styles.card}>
 
-            {}
             <span
                 className={styles.favorito}
                 onClick={marcarComoFavorito}
@@ -37,35 +41,45 @@ function Item({ nombre, precio, imagen }) {
                 {esFavorito ? "⭐" : "☆"}
             </span>
 
-            {}
-            <img
-                src={imagen}
-                alt={nombre}
-                className={styles.imagen}
-            />
+            <Link to={`/producto/${id}`}>
 
-            {}
-            <h3 className={styles.nombre}>{nombre}</h3>
+                <img
+                    src={imagen}
+                    alt={nombre}
+                    className={styles.imagen}
+                />
 
-            {}
+            </Link>
+
+            <h3 className={styles.nombre}>
+                {nombre}
+            </h3>
+
             <p className={styles.precio}>
                 ${precio.toLocaleString("es-AR")}
             </p>
 
-            {}
             <div className={styles.contador}>
-                <button onClick={decrementar}>-</button>
+
+                <button onClick={decrementar}>
+                    -
+                </button>
+
                 <span>{cantidad}</span>
-                <button onClick={incrementar}>+</button>
+
+                <button onClick={incrementar}>
+                    +
+                </button>
+
             </div>
 
-            {}
             <button
                 onClick={comprar}
                 className={styles.boton}
             >
                 Comprar
             </button>
+
         </div>
     );
 }

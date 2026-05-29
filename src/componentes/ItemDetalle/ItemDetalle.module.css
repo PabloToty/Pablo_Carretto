@@ -1,0 +1,76 @@
+.detalleContainer {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tarjetaDetalle {
+    display: flex;
+    background-color: #fdf8f5;
+    border: 1px solid #f3e5dc;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(90, 46, 31, 0.1);
+}
+
+.imagenCol {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.imagen {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.infoCol {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nombre {
+    font-size: 2rem;
+    color: #5A2E1F;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    color: #6e4e37;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+.precio {
+    font-size: 1.8rem;
+    color: #8B5A3C;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+}
+
+.contadorSeccion {
+    border-top: 1px solid #f3e5dc;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .tarjetaDetalle {
+        flex-direction: column;
+    }
+    .infoCol {
+        padding: 25px;
+    }
+    .nombre {
+        font-size: 1.6rem;
+    }
+}

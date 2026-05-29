@@ -1,0 +1,46 @@
+.inicioContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #fdf8f5; /* Fondo crema suave */
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    border: 1px solid #f3e5dc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.bienvenida {
+    font-size: 2.5rem;
+    color: #4a2c11; /* Marrón chocolate */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #6e4e37;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeIn 0.6s ease-out;
+}

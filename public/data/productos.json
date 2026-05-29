@@ -3,30 +3,40 @@
         "id": 1,
         "nombre": "Brownie",
         "precio": 97500,
-        "imagen": "https://i.ibb.co/bgFWn591/Brownie.jpg"
+        "imagen": "https://i.ibb.co/bgFWn591/Brownie.jpg",
+        "destacado": true,
+        "descripcion": "Exquisito brownie húmedo de chocolate premium con una costra crujiente por fuera y un corazón súper tierno. Ideal para los amantes del chocolate intenso."
     },
     {
         "id": 2,
         "nombre": "Tarta Cabsha",
         "precio": 110000,
-        "imagen": "https://i.ibb.co/r2ZJqWsb/Cabsha.jpg"
+        "imagen": "https://i.ibb.co/r2ZJqWsb/Cabsha.jpg",
+        "destacado": false,
+        "descripcion": "Clásica tarta con una masa quebrada crocante, rellena con una generosa capa del mejor dulce de leche repostero y cubierta con un suave baño de chocolate semiamargo."
     },
     {
         "id": 3,
         "nombre": "Cheesecake",
         "precio": 120000,
-        "imagen": "https://i.ibb.co/vCzZpVp9/Cheesecake.jpg"
+        "imagen": "https://i.ibb.co/vCzZpVp9/Cheesecake.jpg",
+        "destacado": true,
+        "descripcion": "Suave y cremosa tarta de queso horneada al estilo Nueva York sobre una base crocante de galletitas, coronada con un delicioso coulis artesanal de frutos rojos."
     },
     {
         "id": 4,
         "nombre": "Tarta de Frutilla",
         "precio": 125000,
-        "imagen": "https://i.ibb.co/gZFtF8Kk/Frutilla.jpg"
+        "imagen": "https://i.ibb.co/gZFtF8Kk/Frutilla.jpg",
+        "destacado": false,
+        "descripcion": "Fresca tarta frutal con base de masa azucarada, rellena de una exquisita crema pastelera artesanal y decorada con frutillas seleccionadas brillantes."
     },
-        {
+    {
         "id": 5,
         "nombre": "Lemon Pie",
         "precio": 85000,
-        "imagen": "https://i.ibb.co/NdvZ2sKj/Lemon-Pie.jpg"
+        "imagen": "https://i.ibb.co/NdvZ2sKj/Lemon-Pie.jpg",
+        "destacado": false,
+        "descripcion": "Perfecto equilibrio entre la acidez de nuestra crema de limón natural y la dulzura de un merengue italiano perfectamente dorado, todo sobre una masa suave."
     }
 ]
