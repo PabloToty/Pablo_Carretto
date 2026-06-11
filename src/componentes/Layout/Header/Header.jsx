@@ -10,6 +10,10 @@ function Header() {
     const { getCartQuantity } = useCart();
     const cantidad = getCartQuantity();
 
+    const cerrarMenu = () => {
+        setMenuAbierto(false);
+    };
+
     return (
         <header className={styles.header}>
 
@@ -67,25 +71,47 @@ function Header() {
                     }`}
                 >
 
-                    <Link to="/">
+                    <Link
+                        to="/"
+                        onClick={cerrarMenu}
+                    >
                         <button>Inicio</button>
                     </Link>
 
-                    <Link to="/productos">
+                    <Link
+                        to="/productos"
+                        onClick={cerrarMenu}
+                    >
                         <button>Productos</button>
                     </Link>
 
-                    <Link to="/nuevo-producto">
+                    <Link
+                        to="/productos-bd"
+                        onClick={cerrarMenu}
+                    >
+                        <button>ProductosBD</button>
+                    </Link>
+
+                    <Link
+                        to="/nuevo-producto"
+                        onClick={cerrarMenu}
+                    >
                         <button>
                             Agregar Producto
                         </button>
                     </Link>
 
-                    <Link to="/carrito">
+                    <Link
+                        to="/carrito"
+                        onClick={cerrarMenu}
+                    >
                         <button>Carrito</button>
                     </Link>
 
-                    <Link to="/contacto">
+                    <Link
+                        to="/contacto"
+                        onClick={cerrarMenu}
+                    >
                         <button>Contacto</button>
                     </Link>
 

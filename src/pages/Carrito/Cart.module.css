@@ -175,3 +175,66 @@
         gap: 5px;
     }
 }
+
+@media (max-width: 768px) {
+
+    .contenedor {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+    }
+
+    .tabla {
+        font-size: 12px;
+    }
+
+    .tabla th:nth-child(4),
+    .tabla td:nth-child(4) {
+        display: none;
+    }
+
+    .imagen {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 6px 4px;
+    }
+
+    .botonEliminar {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .botonCantidad {
+        width: 24px;
+        height: 24px;
+    }
+
+    .controlesCantidad {
+        gap: 3px;
+    }
+
+    .numeroCantidad {
+        min-width: 15px;
+        font-size: 12px;
+    }
+
+    .total {
+        text-align: center;
+    }
+
+    .accionesFinales {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .botonVaciar,
+    .botonFinalizar {
+        text-align: center;
+    }
+}
