@@ -5,6 +5,7 @@ function FormularioContainer() {
     const [datosForm, setDatosForm] = useState({
         nombre: "",
         precio: "",
+        stock: "",
     });
 
     const [imagenFile, setImagenFile] = useState(null);
@@ -48,14 +49,18 @@ function FormularioContainer() {
             if (datosImgbb.success) {
                 const productoCompleto = {
                     ...datosForm,
+                    precio: Number(datosForm.precio),
+                    stock: Number(datosForm.stock),  
                     urlImagen: datosImgbb.data.url
                 };
 
-                console.log(productoCompleto);
+                console.log("Producto a guardar:", productoCompleto);
+                alert("Producto procesado correctamente (ver consola)");
 
                 setDatosForm({
                     nombre: "",
                     precio: "",
+                    stock: "",
                 });
 
                 setImagenFile(null);

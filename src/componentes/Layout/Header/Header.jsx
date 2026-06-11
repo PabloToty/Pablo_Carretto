@@ -1,18 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../../context/CartContext";
 import styles from "./Header.module.css";
 
 function Header() {
 
-    const [cantidad, setCantidad] = useState(0);
     const [menuAbierto, setMenuAbierto] = useState(false);
 
-    useEffect(() => {
-        const carrito =
-            JSON.parse(localStorage.getItem("carrito")) || [];
-
-        setCantidad(carrito.length);
-    }, []);
+    const { getCartQuantity } = useCart();
+    const cantidad = getCartQuantity();
 
     return (
         <header className={styles.header}>

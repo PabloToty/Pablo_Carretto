@@ -60,6 +60,7 @@ function TarjetaProducto({ Mensaje, Destacados = false }) {
                         id={producto.id}
                         nombre={producto.nombre}
                         precio={producto.precio}
+                        stock={producto.stock}
                         imagen={producto.imagen}
                     />
 

@@ -1,4 +1,3 @@
-import TarjetaProducto from "../TarjetaProducto/TarjetaProducto";
 import styles from "./FormularioProducto.module.css";
 
 function FormularioProducto({
@@ -47,6 +46,24 @@ function FormularioProducto({
                         required
                     />
                 </div>
+
+                {}
+                <div className={styles.campo}>
+                    <label className={styles.label}>
+                        Stock Inicial
+                    </label>
+                    <input
+                        className={styles.input}
+                        type="number"
+                        placeholder="Ej: 10"
+                        name="stock"
+                        value={datosForm.stock}
+                        onChange={manejarCambio}
+                        min="0"
+                        required
+                    />
+                </div>
+
                 <div className={styles.campo}>
                     <label className={styles.label}>
                         Imagen

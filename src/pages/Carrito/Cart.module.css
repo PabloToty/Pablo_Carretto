@@ -1,0 +1,177 @@
+.contenedor {
+    padding: 30px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #5A2E1F;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabla th {
+    background-color: #8B5A3C;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.imagen {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.controlesCantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botonCantidad {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: #f3e1d6;
+    color: #5A2E1F;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.botonCantidad:hover:not(:disabled) {
+    background: #e8c9b8;
+}
+
+.botonCantidad:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.numeroCantidad {
+    min-width: 20px;
+    font-weight: 500;
+}
+
+.errorStock {
+    font-size: 0.7rem;
+    color: #d9534f;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.botonEliminar {
+    padding: 6px 12px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.botonEliminar:hover {
+    background-color: #c9302c;
+}
+
+.total {
+    margin-top: 25px;
+    text-align: right;
+    color: #5A2E1F;
+}
+
+.accionesFinales {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.botonVaciar {
+    padding: 10px 20px;
+    background-color: #8B5A3C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botonVaciar:hover {
+    background-color: #6d452d;
+}
+
+.botonFinalizar {
+    padding: 10px 20px;
+    background-color: #5A2E1F;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.botonFinalizar:hover {
+    background-color: #3e1f15;
+}
+
+.vacio {
+    text-align: center;
+    padding: 40px;
+}
+
+.botonVolver {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #8B5A3C;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.botonVolver:hover {
+    background-color: #6d452d;
+}
+
+@media (max-width: 768px) {
+
+    .tabla {
+        font-size: 14px;
+    }
+
+    .imagen {
+        width: 60px;
+        height: 60px;
+    }
+
+    .accionesFinales {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .controlesCantidad {
+        gap: 5px;
+    }
+}
