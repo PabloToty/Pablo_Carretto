@@ -13,11 +13,5 @@
         "puesto": "Maestro Panadero",
         "foto": "https://i.ibb.co/XrL8H5qW/hombre.jpg"
     },
-    {
-        "id": 3,
-        "nombre": "Valentina Ríos",
-        "email": "valentina@midominio.com",
-        "puesto": "Ayudante de Pastelería",
-        "foto": "https://i.ibb.co/ch2x8NLL/mujer2.jpg"
-    }
+
 ]

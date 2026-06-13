@@ -1,60 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import styles from './TarjetaProducto.module.css';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../firebase/config';
 import Item from "../../componentes/Item/Item";
+import styles from './TarjetaProducto.module.css';
 
 function TarjetaProducto({ Mensaje, Destacados = false }) {
-
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
+        const productosRef = collection(db, "productos");
 
-        fetch('/data/productos.json')
+        const q = Destacados 
+            ? query(productosRef, where("destacado", "==", true))
+            : productosRef;
 
-            .then((respuesta) => {
-
-                if (!respuesta.ok) {
-                    throw new Error('No se pudo cargar la información de los productos');
-                }
-
-                return respuesta.json();
+        getDocs(q)
+            .then((resp) => {
+                setProductos(
+                    resp.docs.map((doc) => {
+                        return { ...doc.data() }
+                    })
+                );
             })
-
-            .then((datos) => {
-                setProductos(datos);
+            .catch((err) => {
+                console.error("Error al cargar productos de Firebase:", err);
+                setError(err.message);
             })
-
-            .catch((error) => {
-                setError(error.message);
-            })
-
             .finally(() => {
                 setCargando(false);
             });
 
-    }, []);
+    }, [Destacados]);
 
-    if (cargando) return <p>Cargando productos...</p>;
+    if (cargando) return <p className={styles.loading}>Cargando productos...</p>;
 
-    if (error) return <p>Error: {error}</p>;
-
-    const productosAFiltrar = Destacados
-        ? productos.filter((producto) => producto.destacado === true)
-        : productos;
+    if (error) return <p className={styles.error}>Error: {error}</p>;
 
     return (
-
         <div className={styles.contenedor}>
-
             <h1 className={styles.titulo}>
                 {Mensaje}
             </h1>
 
             <div className={styles.grid}>
-
-                {productosAFiltrar.map((producto) => (
-
+                {productos.map((producto) => (
                     <Item
                         key={producto.id}
                         id={producto.id}
@@ -63,11 +54,8 @@ function TarjetaProducto({ Mensaje, Destacados = false }) {
                         stock={producto.stock}
                         imagen={producto.imagen}
                     />
-
                 ))}
-
             </div>
-
         </div>
     );
 }

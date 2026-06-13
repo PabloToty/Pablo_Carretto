@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../../firebase/config';
 import { useCart } from "../../context/CartContext";
 import styles from "./ItemDetalle.module.css";
 
@@ -12,20 +14,19 @@ const ItemDetalle = () => {
     const { addToCart, getCantidadActual } = useCart();
 
     useEffect(() => {
-        fetch('/data/productos.json')
-            .then((response) => response.json())
-            .then((data) => {
-                const productoEncontrado = data.find(
-                    (p) => p.id === parseInt(id)
-                );
-                setProducto(productoEncontrado);
-            })
-            .catch((error) => {
-                console.error("Error al cargar el producto:", error);
-            })
-            .finally(() => {
-                setCargando(false);
-            });
+        const productosRef = collection(db, "productos");
+        const q = query(productosRef, where("id", "==", parseInt(id)));
+        
+        getDocs(q).then((resp) => {
+            if (!resp.empty) {
+                const doc = resp.docs[0];
+                setProducto({ ...doc.data() });
+            }
+        }).catch((error) => {
+            console.error("Error al cargar el detalle:", error);
+        }).finally(() => {
+            setCargando(false);
+        });
     }, [id]);
 
     const cantidadEnCarrito = producto ? getCantidadActual(producto.id) : 0;
@@ -44,30 +45,19 @@ const ItemDetalle = () => {
     };
 
     const comprar = () => {
-        if (cantidad === 0) {
-            alert("Seleccioná al menos 1 producto");
-            return;
+        if (cantidad > 0) {
+            addToCart(producto, cantidad);
+            alert(`Agregaste ${cantidad} unidad(es) de ${producto.nombre} al carrito`);
+            setCantidad(0);
         }
-
-        addToCart(producto, cantidad);
-        alert(`Agregaste ${cantidad} unidad(es) de ${producto.nombre} al carrito`);
-        setCantidad(0);
     };
 
     if (cargando) {
-        return (
-            <h2 className={styles.loading}>
-                Cargando producto...
-            </h2>
-        );
+        return <h2 className={styles.loading}>Cargando producto...</h2>;
     }
 
     if (!producto) {
-        return (
-            <h2 className={styles.loading}>
-                Producto no encontrado.
-            </h2>
-        );
+        return <h2 className={styles.loading}>Producto no encontrado.</h2>;
     }
 
     return (

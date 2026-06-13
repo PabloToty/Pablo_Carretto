@@ -8,7 +8,6 @@ import TarjetaProducto from "./pages/TarjetaProducto/TarjetaProducto";
 import Directorio from "./pages/TarjetaContacto/Directorio";
 import ItemDetalle from "./componentes/ItemDetalle/ItemDetalle";
 import Cart from "./pages/Carrito/Cart";
-import ProductosBD from "./componentes/ProductosBD/ProductosBD"; // Importamos el nuevo componente
 
 function App() {
     return (
@@ -20,9 +19,6 @@ function App() {
                     path="productos"
                     element={<TarjetaProducto Mensaje="Nuestro Catálogo Completo" />}
                 />
-
-                {}
-                <Route path="productos-bd" element={<ProductosBD />} />
 
                 <Route path="producto/:id" element={<ItemDetalle />} />
                 <Route

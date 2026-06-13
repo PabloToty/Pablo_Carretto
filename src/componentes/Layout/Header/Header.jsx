@@ -86,13 +86,6 @@ function Header() {
                     </Link>
 
                     <Link
-                        to="/productos-bd"
-                        onClick={cerrarMenu}
-                    >
-                        <button>ProductosBD</button>
-                    </Link>
-
-                    <Link
                         to="/nuevo-producto"
                         onClick={cerrarMenu}
                     >

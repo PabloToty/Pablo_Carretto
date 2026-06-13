@@ -1,11 +1,11 @@
 import styles from "./TarjetaContacto.module.css";
 
-function TarjetaContacto({ nombre, email, puesto, foto }) {
+function TarjetaContacto({ nombre, linkedinURL, puesto, fotoURL }) {
     return (
         <div className={styles.card}>
 
             <img
-                src={foto}
+                src={fotoURL}
                 alt={nombre}
                 className={styles.avatar}
             />
@@ -14,8 +14,9 @@ function TarjetaContacto({ nombre, email, puesto, foto }) {
 
             <p className={styles.puesto}>{puesto}</p>
 
-            <a href={`mailto:${email}`} className={styles.email}>
-                {email}
+            {}
+            <a href={linkedinURL} target="_blank" rel="noopener noreferrer" className={styles.email}>
+                Ver Perfil LinkedIn
             </a>
 
         </div>
