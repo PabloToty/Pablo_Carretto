@@ -1,74 +1,113 @@
 .container {
     display: flex;
     justify-content: center;
-    padding: 2rem 1rem;
+    padding: 20px;
+    background-color: #fdf8f5;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
     width: 100%;
-    max-width: 19rem;
-    padding: 1.4rem;
-    background-color: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 650px;
+    background: #ffffff;
+    border: 1px solid #eee0d5;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(90, 46, 31, 0.08);
 }
 
 .titulo {
     text-align: center;
-    margin-bottom: 0.6rem;
-    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #5A2E1F;
+    font-size: 26px;
     font-weight: 700;
-    color: #222;
+}
+
+.gridCampos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+    .gridCampos {
+        grid-template-columns: 1fr;
+    }
 }
 
 .campo {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    margin-bottom: 15px;
 }
 
 .label {
-    font-size: 0.75rem;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #5A2E1F;
     font-weight: 600;
-    color: #333;
 }
 
-.input {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.input:focus {
+.input, .textarea {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1.5px solid #e0d0c5;
     outline: none;
-    border-color: #222;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+    border-color: #8B5A3C;
+    box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.campoCheck {
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    background: #fdf8f5;
+    border-radius: 10px;
+}
+
+.labelCheck {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5A2E1F;
+    font-weight: 500;
+}
+
+.labelCheck input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #8B5A3C;
+    cursor: pointer;
 }
 
 .boton {
-    margin-top: 0.7rem;
-    padding: 0.7rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #222;
+    width: 100%;
+    padding: 14px;
+    background: #8B5A3C;
     color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .boton:hover {
-    background-color: #444;
-}
-
-.boton:active {
-    transform: scale(0.98);
+    background: #704830;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 90, 60, 0.3);
 }

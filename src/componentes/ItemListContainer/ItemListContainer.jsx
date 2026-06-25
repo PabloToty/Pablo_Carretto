@@ -20,7 +20,7 @@ const ItemListContainer = ({ destacados }) => {
             .then((resp) => {
                 setProductos(
                     resp.docs.map((doc) => {
-                        return { ...doc.data() }
+                        return { ...doc.data(), id: doc.id }
                     })
                 );
             })

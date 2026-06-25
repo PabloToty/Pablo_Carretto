@@ -37,9 +37,7 @@ function Header() {
                     to="/carrito"
                     className={styles.carrito}
                 >
-                    <span aria-label="Carrito">
-                        🛒
-                    </span>
+                    <span>🛒</span>
 
                     {cantidad > 0 && (
                         <span className={styles.badge}>
@@ -54,9 +52,7 @@ function Header() {
 
                 <div
                     className={styles.hamburger}
-                    onClick={() =>
-                        setMenuAbierto(!menuAbierto)
-                    }
+                    onClick={() => setMenuAbierto(!menuAbierto)}
                 >
                     <span></span>
                     <span></span>
@@ -65,46 +61,28 @@ function Header() {
 
                 <div
                     className={`${styles.navLinks} ${
-                        menuAbierto
-                            ? styles.active
-                            : ""
+                        menuAbierto ? styles.active : ""
                     }`}
                 >
 
-                    <Link
-                        to="/"
-                        onClick={cerrarMenu}
-                    >
+                    <Link to="/" onClick={cerrarMenu}>
                         <button>Inicio</button>
                     </Link>
 
-                    <Link
-                        to="/productos"
-                        onClick={cerrarMenu}
-                    >
+                    <Link to="/productos" onClick={cerrarMenu}>
                         <button>Productos</button>
                     </Link>
 
-                    <Link
-                        to="/nuevo-producto"
-                        onClick={cerrarMenu}
-                    >
-                        <button>
-                            Agregar Producto
-                        </button>
+                    {/* SOLO ESTO SE AGREGA */}
+                    <Link to="/gestion" onClick={cerrarMenu}>
+                        <button>Gestión de Productos</button>
                     </Link>
 
-                    <Link
-                        to="/carrito"
-                        onClick={cerrarMenu}
-                    >
+                    <Link to="/carrito" onClick={cerrarMenu}>
                         <button>Carrito</button>
                     </Link>
 
-                    <Link
-                        to="/contacto"
-                        onClick={cerrarMenu}
-                    >
+                    <Link to="/contacto" onClick={cerrarMenu}>
                         <button>Contacto</button>
                     </Link>
 

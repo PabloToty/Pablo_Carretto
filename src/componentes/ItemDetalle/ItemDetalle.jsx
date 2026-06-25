@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
 import { useCart } from "../../context/CartContext";
 import styles from "./ItemDetalle.module.css";
@@ -14,19 +14,25 @@ const ItemDetalle = () => {
     const { addToCart, getCantidadActual } = useCart();
 
     useEffect(() => {
-        const productosRef = collection(db, "productos");
-        const q = query(productosRef, where("id", "==", parseInt(id)));
-        
-        getDocs(q).then((resp) => {
-            if (!resp.empty) {
-                const doc = resp.docs[0];
-                setProducto({ ...doc.data() });
-            }
-        }).catch((error) => {
-            console.error("Error al cargar el detalle:", error);
-        }).finally(() => {
-            setCargando(false);
-        });
+        if (id) {
+            const docRef = doc(db, "productos", id);
+
+            getDoc(docRef)
+                .then((resp) => {
+                    if (resp.exists()) {
+                        // 3. Guardamos los datos incluyendo el id de Firebase
+                        setProducto({ ...resp.data(), id: resp.id });
+                    } else {
+                        console.log("No se encontró el producto");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error al cargar el detalle:", error);
+                })
+                .finally(() => {
+                    setCargando(false);
+                });
+        }
     }, [id]);
 
     const cantidadEnCarrito = producto ? getCantidadActual(producto.id) : 0;
@@ -75,7 +81,7 @@ const ItemDetalle = () => {
                         {producto.nombre}
                     </h2>
                     <p className={styles.descripcion}>
-                        {producto.descripcion}
+                        {producto.descripcion || "Sin descripción disponible."}
                     </p>
                     <p className={styles.precio}>
                         ${producto.precio.toLocaleString("es-AR")}
